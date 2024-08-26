@@ -13,7 +13,7 @@ const PlaceItem = (props) => {
   const { place, isDetail } = props;
   return (
     <div className="card-container">
-      <div class="card">
+      <div className="card">
         <img src={place.image} alt={place.name} />
         <h3>{place.name}</h3>
         <p>{place.description}</p>
