@@ -16,7 +16,7 @@ const PlaceDetails = () => {
   );
 
   if (!place) {
-    return <div>Place not found</div>;
+    return <div style={{ paddingLeft: 30 }}>Place not found</div>;
   }
 
   return (
