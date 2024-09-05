@@ -33,7 +33,9 @@ const RandomPlaceSuggestion = () => {
   return (
     <div>
       <h3>Random Place Suggestion</h3>
-      <button onClick={getRandomPlace}>Suggest Random Place</button>
+      <button style={{ marginLeft: "30px" }} onClick={getRandomPlace}>
+        Suggest Random Place
+      </button>
       <div className="container">
         {randomPlace && (
           <PlaceItem
