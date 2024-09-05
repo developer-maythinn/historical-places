@@ -59,14 +59,22 @@ const placesSlice = createSlice({
   name: "places",
   initialState,
   reducers: {
-    toggleVisited: (state, action) => {
+    // toggleVisited: (state, action) => {
+    //   const place = state.places.find((place) => place.id === action.payload);
+    //   if (place) {
+    //     place.visited = !place.visited;
+    //   }
+    // },
+    markAsVisited: (state, action) => {
       const place = state.places.find((place) => place.id === action.payload);
-      if (place) {
-        place.visited = !place.visited;
-      }
+      if (place) place.visited = true;
+    },
+    unmarkAsVisited: (state, action) => {
+      const place = state.places.find((place) => place.id === action.payload);
+      if (place) place.visited = false;
     },
   },
 });
 
-export const { toggleVisited } = placesSlice.actions;
+export const { markAsVisited, unmarkAsVisited } = placesSlice.actions;
 export default placesSlice.reducer;

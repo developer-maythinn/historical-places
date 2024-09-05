@@ -1,6 +1,4 @@
-import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { toggleVisited } from "../redux/placesSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMapMarkerAlt,
@@ -9,8 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const PlaceItem = (props) => {
-  const dispatch = useDispatch();
-  const { place, isDetail } = props;
+  const { place, isDetail, toggleVisitedStatus } = props;
   return (
     <div className="card-container">
       <div className="card">
@@ -25,7 +22,7 @@ const PlaceItem = (props) => {
           className="btn-gp"
           style={{ justifyContent: isDetail ? "center" : "space-between" }}
         >
-          <button onClick={() => dispatch(toggleVisited(place.id))}>
+          <button onClick={() => toggleVisitedStatus(place.id, place.visited)}>
             <FontAwesomeIcon
               icon={place.visited ? faMapMarkerAlt : faMapMarker}
               style={{ paddingRight: 5 }}
