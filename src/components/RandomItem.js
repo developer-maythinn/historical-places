@@ -9,8 +9,8 @@ function RandomItem(props) {
           <img src={place.image} alt={place.name} />
           <div className="content">
             <h3>{place.name}</h3>
-            <p>{place.description}</p>
-
+            <p>{place.description} Test</p>
+            
           </div>
         </div>
       </div>
